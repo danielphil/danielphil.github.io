@@ -4,28 +4,18 @@ title:  "Making ISO Disc Images on Mac OS X"
 categories: osx
 ---
 
-Was creating some disc images this week and found the following commands handy on OS X. I've only tried this with OS X Lion, but the instructions should probably apply to other versions of the OS too.
+Was creating some ISO disc images this week with OS X Lion (from existing discs) and thought I would document the process.
 
 Making an ISO
 =============
 
-Use Disk Utility to find the path to your CD drive (in my case /dev/disk1) and then open a Terminal and type the following to create an ISO image of the disc in the drive:
-{% highlight sh %}
-dd if=/dev/disk1 of=your_iso_name.iso
-{% endhighlight %}
+Using Disk Utility:
 
-To monitor progress while dd is silently working, run the following in another Terminal window:
-{% highlight sh %}
-while :; do clear; ls -l your_iso_name.iso; sleep 2; done
-{% endhighlight %}
-
-Verifying the ISO
-=================
-
-If you want to be super paranoid about things, you can verify your ISO with the following commands:
-{% highlight sh %}
-openssl sha1 /dev/disk1
-openssl sha1 your_iso_name.iso
-{% endhighlight %}
-
-Once the commands have finished, compare the output hashes to check that they match. If they do, then your ISO should be fine.
+ 1. Start Disk Utility
+ 1. Insert the disc you want to create an image from
+ 1. Select the disc in the sidebar of Disk Utility (in my case, I selected the volume itself and not the drive)
+ 1. Choose File->New Disk Image From 'VolumeNameHere'
+ 1. Select DVD/CD master from the Image Format dropdown
+ 1. Click Save and wait
+ 1. Finally, rename the .cdr file that's produced to .iso.
+ 1. Done!
