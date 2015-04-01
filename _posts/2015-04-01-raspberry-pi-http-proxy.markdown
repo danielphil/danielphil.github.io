@@ -17,7 +17,7 @@ sudo apt-get install squid3
 
 Open `/etc/squid3/squid.conf` in an editor and uncomment the following lines to make Squid accept connections:
 
-{% endhighlight %}
+{% highlight bash %}
 #acl localnet src 192.168.0.0/16 # RFC1918 possible internal network
 #http_access allow localnet
 {% endhighlight %}
