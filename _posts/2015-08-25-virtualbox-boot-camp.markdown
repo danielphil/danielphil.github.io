@@ -9,8 +9,12 @@ Some scrappily generated with information about how I got VirtualBox to boot fro
 ## Things I installed
 
 1. Windows 10 x64 using the OS X Boot Camp assistant
-1. VirtualBox 5.0.3 Test Build (version I installed was `VirtualBox-5.0.3-102220-OSX`)
-1. Accompanying VirtualBox extensions (`Oracle\_VM\_VirtualBox\_Extension\_Pack-5.0.3-102218.vbox-extpack`). I'm not really sure if I needed this, but installed it anyway.
+1. VirtualBox 5.0.10 (version I installed was `VirtualBox-5.0.10-104061-OSX`)
+1. Accompanying VirtualBox extensions (`Oracle_VM_VirtualBox_Extension_Pack-5.0.10-104061.vbox-extpack`). I'm not really sure if I needed this, but installed it anyway.
+
+## Disabling SIP
+
+I had to [disable System Integrity Protection](https://developer.apple.com/library/mac/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html) on El Capitan (OS X 10.11) to get this to work. 
 
 ## Setting drive permissions
 Firstly, run `diskutil list` to get a list of drives on your system. Take a note of the drive number of the drive named `EFI` and the other one named `BOOTCAMP`. (The `BOOTCAMP` drive might have a different name depending on what you've called it). In my case, the EFI drive was 1 and the `BOOTCAMP` drive was 4.
