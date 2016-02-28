@@ -8,12 +8,14 @@ Rotation matrices can be built by combining basic rotations in X, Y and Z ([see 
 
 A rotation matrix can be built using three orthogonal vectors which define the original orientation of the X, Y and Z axes in the new coordinate space.
 
-\\[R = \begin{bmatrix}
-A\_x & B\_x & C\_x & 0 \\\\
-A\_y & B\_y & C\_y & 0 \\\\
-A\_z & B\_z & C\_z & 0 \\\\
+$$
+R = \begin{bmatrix}
+A_x & B_x & C_x & 0 \\
+A_y & B_y & C_y & 0 \\
+A_z & B_z & C_z & 0 \\
 0 & 0 & 0 & 1
-\end{bmatrix} \\]
+\end{bmatrix}
+$$
 where \\(A\\), \\(B\\) and \\(C\\) are unit vectors.
 
 For the identity matrix (and hence no rotation), \\(A = \begin{pmatrix} 1 & 0 & 0 \end{pmatrix}\\), \\(B = \begin{pmatrix} 0 & 1 & 0 \end{pmatrix}\\) and \\(C = \begin{pmatrix} 0 & 0 & 1 \end{pmatrix}\\).
@@ -38,26 +40,32 @@ Rotating 90 degrees around the X axis results in the orientation shown below:
 * \\(Z\_{orig}\\) is the original orientation of the Z axis. It is now pointing along the negative Y axis. \\(Z\_{orig} = \begin{pmatrix} 0 & -1 & 0 \end{pmatrix}\\)
 
 Putting these three vectors into the matrix above gives the following rotation matrix:
-\\[R = \begin{bmatrix}
-1 & 0 & 0 & 0 \\\\
-0 & 0 & -1 & 0 \\\\
-0 & 1 & 0 & 0 \\\\
+$$
+R = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 1
-\end{bmatrix} \\]
+\end{bmatrix}
+$$
 
 To verify this, here's the general matrix for rotation around X, where \\(\\theta\\) is the rotation angle:
-\\[R\_x(\\theta) = \begin{bmatrix}
-1 & 0 & 0 \\\\
-0 & \cos \theta &  -\sin \theta \\\\
+$$
+R_x(\theta) = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos \theta &  -\sin \theta \\
 0 & \sin \theta  &  \cos \theta
-\end{bmatrix} \\]
+\end{bmatrix}
+$$
 
 Setting \\(\\theta = 90° \\) gives:
-\\[R = \begin{bmatrix}
-1 & 0 & 0 & 0 \\\\
-0 & 0 & -1 & 0 \\\\
-0 & 1 & 0 & 0 \\\\
+$$
+R = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 1
-\end{bmatrix} \\]
+\end{bmatrix}
+$$
 
 Which is the same matrix that we originally created.
