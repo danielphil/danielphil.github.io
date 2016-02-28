@@ -1,4 +1,3 @@
 safe: true
 name: Random stuff
 markdown: redcarpet
-pygments: true
