@@ -4,7 +4,7 @@ title:  "Setting up a Raspberry Pi as an HTTP proxy"
 categories: raspberrypi http proxy
 ---
 
-I needed an HTTP proxy for testing busalert today so my Raspberry Pi was temporarily turned into a proxy server. Here's the steps I needed to follow to get it to work.
+I needed an HTTP proxy for testing [busalert](https://github.com/danielphil/busalert) today so my Raspberry Pi was temporarily turned into a proxy server. Here's the steps I needed to follow to get it to work.
 
 ## Install Squid
 
