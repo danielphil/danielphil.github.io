@@ -19,3 +19,5 @@ I followed the [setup instructions](https://help.github.com/articles/setting-up-
 3. Cross fingers and... `gem install bundler`
 4. Set up the Gemfile and install dependencies bundle (as detailed on the GitHub instructions).
 5. `cd` into your GitHub pages clone and `bundle exec jekyll serve`.
+
+The process has become significantly easier since GitHub introduced remote themes. I thought I might have to spend a bunch of time redesigning the site, but [this theme](https://github.com/mmistakes/so-simple-theme) was much nicer than anything I could've tried to quickly put together.
