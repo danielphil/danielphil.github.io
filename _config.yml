@@ -54,7 +54,7 @@ feed:
 search_full_content: false # can have performance implications for large sites
 
 # Taxonomy pages
-# category_archive_path: "/categories/#"
+category_archive_path: "/categories/#"
 # tag_archive_path: "/tags/#"
 
 # Exclude from processing.
@@ -75,6 +75,12 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
 
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+
 # Front Matter Defaults
 defaults:
   # Posts defaults
@@ -84,17 +90,26 @@ defaults:
     values:
       layout: post
       share: true
+  - scope:
+      path: "_projects"
+      type: projects
+    values:
+      layout: page
+      share: true
 
 # Site Author
 author:
-  name: "Daniel Phillips"
-  picture: "/images/me.jpeg"
+  name: Daniel Phillips
+  picture: /images/me.jpeg
   email:
-  twitter: "danielp"
+  twitter: danielp
   links:
-    - title:
-      url:
-      icon:
+    - title: Twitter
+      url: https://twitter.com/danielp
+      icon: fab fa-twitter-square
+    - title: GitHub
+      url: https://github.com/danielphil
+      icon: fab fa-github-square
 
 # Footer Links
 footer_links:

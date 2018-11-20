@@ -1,7 +1,6 @@
 ---
-layout: post
 title:  "Setting up Jekyll for building GitHub pages"
-categories: jekyll github
+categories: Notes
 ---
 
 Time to resurrect the old GitHub Pages site! I haven't really touched this for the last two years, so it's time I brought the site up to date. One part of this is installing Jekyll locally on my Mac so I can test the site without continually uploading it to GitHub.

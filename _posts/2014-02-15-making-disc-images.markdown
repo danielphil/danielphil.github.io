@@ -1,7 +1,6 @@
 ---
-layout: post
 title:  "Making ISO Disc Images on Mac OS X"
-categories: osx
+categories: Notes
 ---
 
 Was creating some ISO disc images this week with OS X Lion (from existing discs) and thought I would document the process.

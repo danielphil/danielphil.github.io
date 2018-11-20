@@ -1,7 +1,6 @@
 ---
-layout: post
 title:  "Notes for using Windows 10 Boot Camp disk with VirtualBox"
-categories: windows virtualbox osx
+categories: Notes
 ---
 
 Some notes on how I got VirtualBox to boot from my Windows 10 Boot Camp drive. This will let you share a Windows install between Boot Camp and VirtualBox.

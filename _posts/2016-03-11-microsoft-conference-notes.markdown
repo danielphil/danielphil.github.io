@@ -1,7 +1,6 @@
 ---
-layout: post
 title:  "Talk notes from Scottish Developers event"
-categories: conferencenotes
+categories: Notes
 ---
 
 Today I attended a [series of talks](https://www.eventbrite.co.uk/e/triple-bill-webpack-ios-app-using-xamarin-devops-tickets-21081493314) at the Microsoft offices in Edinburgh organised by [Scottish Developers](http://scottishdevelopers.com). Here are my *hastily scribbled* notes from the talks.

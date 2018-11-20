@@ -1,7 +1,6 @@
 ---
-layout: post
 title:  "Using three.js with TypeScript"
-categories: three.js typescript bower typings
+categories: Notes
 ---
 
 I tend to modify more projects than I create, so while I can often remember APIs, I often forget the steps I used to set everything up. Therefore, this page is a future reference for me when I forgot to do all this. (If you haven't done this before then hopefully this will serve as a good starting point!)
