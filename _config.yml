@@ -20,7 +20,7 @@ title: "Random stuff"
 description: "A sort-of blog"
 baseurl: "/" # the subpath of your site, e.g. "/blog"
 url: "https://danielphil.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-logo: "/images/me.jpeg" # path of site logo, e.g. "/images/logo.png"
+logo: "/images/logo.jpg" # path of site logo, e.g. "/images/logo.png"
 copyright: "&copy; 2018 Daniel Phillips. Powered by [Jekyll](https://jekyllrb.com) & [So Simple](https://github.com/mmistakes/so-simple-theme)."
 date_format: "%B %-d, %Y"
 read_time: # reading time estimates, e.g. true
