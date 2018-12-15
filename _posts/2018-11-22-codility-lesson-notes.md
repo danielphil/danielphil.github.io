@@ -85,3 +85,19 @@ def divisors(n):
 
 ## Checking for prime numbers
 Based on the same principles as the example above, you can check for primes by iterating over `i * i <= n`. If `n % i == 0`, then the number isn't prime.
+
+## Sieve of Eratosthenes
+
+Can be used to find all prime numbers in the range $$2$$ to $$n$$.
+
+Here's [an implementation](https://github.com/danielphil/codility_training/blob/master/sieve.py) based on Codility's notes.
+
+Some quick reminders:
+* Need a list of flags for each number from `2` to `n`.
+* Main loop iterates from 2 to $$\sqrt{n}$$ (inclusive). Not necessary to iterate all the way to `n`.
+* Each time the main loop is incremented, if the flag for the current value `i` indicates it is still prime:
+    1. Mark $$i^2$$ as non prime.
+    2. Mark $$i^2 + i$$ as non prime.
+    3. Continue marking multiples as non prime until reaching `n`.
+* At the end, all prime numbers will have been found.
+* Complexity is $$O(n\log{\log{n}})$$.
