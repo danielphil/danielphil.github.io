@@ -101,3 +101,16 @@ Some quick reminders:
     3. Continue marking multiples as non prime until reaching `n`.
 * At the end, all prime numbers will have been found.
 * Complexity is $$O(n\log{\log{n}})$$.
+
+### Finding prime factors
+
+The Sieve of Eratosthenes algorithm can be modified to find the prime factors of a number `n`.
+1. Build an array `F` of minimum prime factor for each value of `i` instead of just using `true/false`.
+2. Iterate through this array starting at element `n`.
+3. Store the prime factor at position `F[n]` in the output list of prime factors.
+4. `n = n / F[n]`
+5. Keep iterating until `F[n] == 0`
+
+Complexity is $$O(\log{n})$$.
+
+See here for [an implementation](https://github.com/danielphil/codility_training/blob/master/sieve.py) based on Codility's notes.
