@@ -114,3 +114,16 @@ The Sieve of Eratosthenes algorithm can be modified to find the prime factors of
 Complexity is $$O(\log{n})$$.
 
 See here for [an implementation](https://github.com/danielphil/codility_training/blob/master/sieve.py) based on Codility's notes.
+
+### Euclidean algorithm
+
+The Codility notes provide 3 approaches for finding the greatest common divisor (**gcd**) between 2 numbers:
+* **Euclidean algorithm by subtraction:** recursively subtract the larger value from the smaller until the values are equal. $$O(n)$$
+* **Euclidean algorithm by division:** recursively use the modulo operator until the two values are divisible by each other. $$O(\log(a + b))$$ where $$a$$ and $$b$$ are the two input values.
+* **Binary Euclidean algorithm:** a more complex implementation involving division by 2 and scaling the result. $$O(\log{n})$$
+
+The least common multiple (**lcm**) of $$a$$ and $$b$$ is the smallest value that can be divided by $$a$$ and $$b$$.
+
+$$lcm(a, b) = \frac{a \cdot b}{gcd(a, b)}$$
+
+See here for [an implementation](https://github.com/danielphil/codility_training/blob/master/euclidean.py) based on Codility's notes.
