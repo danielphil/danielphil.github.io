@@ -142,3 +142,9 @@ def fib(n):
 ```
 
 Complexity is $$O(n)$$.
+
+### Binary search
+
+Start with a sorted list of values `v`, length `n`. `beg = 0`, `end = n - 1`, $$ { mid = \lfloor\frac{beg + end}{2}}\rfloor $$. Compare the value of `v[mid]` to `x`, and set `beg` or `end` to `mid ± 1` depending on the value. Keep repeating until `x` has been found (or can't be found).
+
+Complexity is $$O(\log{n})$$.
