@@ -127,3 +127,18 @@ The least common multiple (**lcm**) of $$a$$ and $$b$$ is the smallest value tha
 $$lcm(a, b) = \frac{a \cdot b}{gcd(a, b)}$$
 
 See here for [an implementation](https://github.com/danielphil/codility_training/blob/master/euclidean.py) based on Codility's notes.
+
+### Fibonacci numbers
+
+```python
+def fib(n):
+    fib = [0] * (n + 2)
+    fib[1] = 1
+
+    for i in range(2, n + 1):
+        fib[i] = fib[n - 1] + fib[n - 2]
+    
+    return fib[n]
+```
+
+Complexity is $$O(n)$$.
