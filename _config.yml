@@ -17,11 +17,11 @@ remote_theme: "mmistakes/so-simple-theme"
 # remote_theme: mmistakes/so-simple-theme
 locale: en-GB
 title: "Random stuff"
-description: "A sort-of blog"
+description: ""
 baseurl: "/" # the subpath of your site, e.g. "/blog"
 url: "https://danielphil.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 logo: "/images/logo.jpg" # path of site logo, e.g. "/images/logo.png"
-copyright: "&copy; 2019 Daniel Phillips. Powered by [Jekyll](https://jekyllrb.com) & [So Simple](https://github.com/mmistakes/so-simple-theme)."
+copyright: "&copy; Daniel Phillips. Powered by [Jekyll](https://jekyllrb.com) & [So Simple](https://github.com/mmistakes/so-simple-theme)."
 date_format: "%B %-d, %Y"
 read_time: # reading time estimates, e.g. true
 words_per_minute: # 200
@@ -90,13 +90,13 @@ defaults:
       type: posts
     values:
       layout: post
-      share: true
+      share: false
   - scope:
       path: "_projects"
       type: projects
     values:
       layout: page
-      share: true
+      share: false
 
 # Site Author
 author:
