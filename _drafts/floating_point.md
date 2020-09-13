@@ -46,8 +46,34 @@ While integers are useful, we also need to be able to represent real numbers to 
 
 One technique for storing real numbers is **fixed point**. This is a simpler technique than floating point and was commonly used on systems that lacked hardware support for floating point. For example, [Doom used fixed point representations](https://doomwiki.org/wiki/Fixed_point) for numbers because floating point hardware was not commonplace on systems at the time it was developed. The original Sony PlayStation hardware also relied on fixed point for calculations in the GTE coprocessor because it was cheaper to implement than full floating point hardware.
 
+To understand how to represent a number in fixed point, it's easiest to work through some examples.
 
+To begin with, let's say we have 4 decimal digits to represent the number 1234:
+<table border="1" style="width: 100px; margin-left:auto; margin-right:auto;">
+<tr>
+    <td>10<sup>3</sup></td>
+    <td>10<sup>2</sup></td>
+    <td>10<sup>1</sup></td>
+    <td>10<sup>0</sup></td>
+</tr>
+<tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+</table>
+Using these digits, our number can be calculated as $$1\times10^3 + 2\times10^2 + 3\times10^1 + 4\times10^0 = 1234$$
 
+If we add a decimal point in the middle, the units each digit represents changes and we end up with 12.34:
+<table border="1" style="width: 100px; margin-left:auto; margin-right:auto;">
+<tr>
+    <td>10<sup>1</sup></td>
+    <td>10<sup>0</sup></td>
+    <td>.</td>
+    <td>10<sup>-1</sup></td>
+    <td>10<sup>-2</sup></td>
+</tr>
+<tr><td>1</td><td>2</td><td>.</td><td>3</td><td>4</td></tr>
+</table>
+$$1\times10^1 + 2\times10^0 + 3\times10^{-1} + 4\times10^{-2} = 12.34$$
+
+We haven't changed the number of digits that we need to store the number, but we've changed way we interpret the digits so that the first two digits come before the decimal point and the last two digits come after. In the case of 1234, all 4 digits were before the decimal point and there were 0 digits after.
 
 * Why floating point? Representing real numbers vs integer, normalised scientific notation.
 * Fixed point
