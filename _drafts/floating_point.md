@@ -1,5 +1,5 @@
 ---
-title:  "Learning about Floating point numbers"
+title:  "Floating point numbers: some basics"
 categories: Coding FloatingPoint
 ---
 
@@ -124,6 +124,8 @@ This presents accuracy issues when working with decimal values. Values like 0.5 
 
 Arithmetic with fixed point values that share a common format is straightforward and can be performed using the same operations as integer values. To add two values, simply add the two underlying integer values together. To multiply two values, multiply the underlying integer values together and then multiply by the scaling factor.
 
+When working with binary numbers, instead of a decimal point, the term **radix point** is used to refer to the separator that divides the integer and fractional parts of a number.
+
 Floating point
 ==============
 
@@ -167,10 +169,9 @@ In theory, it should be possible to represent exponents in the range -127 to 128
 
 The mantissa is stored as a `1.23` fixed point number, but because we're storing the mantissa in normalised format in base 2, the first digit will always be $$1$$. Therefore, we don't need to store the first digit and instead only need to store the 23 fractional bits of the mantissa.
 
-## TODO Arithmetic
+## Arithmetic
 
-Addition/subtraction
-Multiplication
+
 
 # TODO Best practices
 
