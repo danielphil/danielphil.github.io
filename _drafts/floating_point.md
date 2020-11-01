@@ -133,7 +133,7 @@ While fixed point is effective at representing real values, the fixed scaling fa
 
 Floating point builds upon fixed point by including a scaling factor along with the significant digits of the number. This makes it possible to represent both very large and very small values using a single type.
 
-To do this, floating point makes use of [normalised scientific notation](https://en.wikipedia.org/wiki/Scientific_notation) to represent a number. If we take a number such as 0.001267, in normalised scientific notation, this becomes $$1.267\times10^{-3}$$. The number is broken down into two parts, the _mantissa_ of 1.267 and the _exponent_ of -3.
+To do this, floating point makes use of [normalised scientific notation](https://en.wikipedia.org/wiki/Scientific_notation) to represent a number. For example, the number 0.001267 becomes $$1.267\times10^{-3}$$ in normalised scientific notation. The number is broken down into two parts, the _mantissa_ of 1.267 and the _exponent_ of -3.
 
 In normalized format, the mantissa, $$m$$, can be positive or negative, but must always be in the range $$ 1.0 \geq m < 10.0$$. The exponent is always represented as an integer value.
 
@@ -141,7 +141,7 @@ In normalized format, the mantissa, $$m$$, can be positive or negative, but must
 
 As with the fixed point examples discussed above, floating point numbers are represented using base 2 numbers. This gives a normalized scientific notation format of $$ \pm m \times 2^{\pm e} $$, where $$m$$ is the mantissa in the range $$ 1.0 \geq m < 2.0$$ and $$e$$ is the exponent.
 
-A 32-bit floating point breaks down into the following sections:
+In terms of bits, a 32-bit floating point value (such as a C++ `float`) breaks down into the following parts:
 
 | Sign    | Exponent | Mantissa     |
 | ------- | -------- | ------------ |
@@ -149,13 +149,13 @@ A 32-bit floating point breaks down into the following sections:
 
 ### Mantissa sign
 
-The sign of the mantissa is represented by a single bit: 0 if positive and 1 if negative. Separating the sign bit results in the mantissa being stored as an unsigned value instead of requiring the use of two's complement arithmetic. Negation of the mantissa only requires the sign bit to be flipped, and the absolute value of a number can be obtained by setting the sign bit to 0. This also makes floating point numbers symmetric: every positive value also has a corresponding negative one.
+The sign of the mantissa is represented by a single bit: 0 if positive and 1 if negative. Separating the sign bit results in the mantissa being stored as an unsigned value instead of requiring the use of two's complement arithmetic. Negation of the mantissa only requires the sign bit to be flipped and the absolute value of a number can be obtained by setting the sign bit to 0. This also makes floating point numbers symmetric: every positive value also has a corresponding negative one.
 
 One side effect of this representation is that zero can be either negative or positive!
 
 ### Exponent
 
-The exponent is stored as a _biased_ integer number. The stored value represents an offset which is subtracted from a constant bias value to give the value of the exponent. In the case of a float value, the value of 127 is used as a bias.
+The exponent is stored as a _biased_ integer number. The stored value represents an offset which is subtracted from a constant bias value to give the value of the exponent. In the case of a `float` value, the value of 127 is used as a bias.
 
 Given an exponent value $$E$$, it can be encoded into the stored value $$S$$ with a bias of $$B$$ using:
 
@@ -169,28 +169,9 @@ In theory, it should be possible to represent exponents in the range -127 to 128
 
 The mantissa is stored as a `1.23` fixed point number, but because we're storing the mantissa in normalised format in base 2, the first digit will always be $$1$$. Therefore, we don't need to store the first digit and instead only need to store the 23 fractional bits of the mantissa.
 
-## Arithmetic
+## Further reading
 
+* Wikipedia's entry for [floating point](https://en.wikipedia.org/wiki/Floating-point_arithmetic) contains a lot of useful information and is worth a read.
+* Intel published a fascinating article [Intel and Floating-Point](https://www.intel.com/content/dam/www/public/us/en/documents/case-studies/floating-point-case-study.pdf) which provides a history of the development of the IEEE Standard 754 for Binary Floating-point Arithmetic and the motivation behind it.
 
-
-# TODO Best practices
-
-Don't use bitwise equality tests for 0.
-Don't compare exactly
-Don't use absolute difference when comparing
-
-
-* Why floating point? Representing real numbers vs integer, normalised scientific notation.
-* Fixed point
-* How to calculate errors in representation
-* How floating point represents a number, bits, sign, mantissa, exponent
-* Representing zero
-* NaN
-* Infinity
-* Additions and subtractions. When they go wrong and catastrophic cancellation.
-* multiplications
-* Floating point types: single, double, half
-* Floating point on Intel: FPU instructions and SSE
-* Summary of best practices
-
-https://www.intel.com/content/dam/www/public/us/en/documents/case-studies/floating-point-case-study.pdf
+In my next post, I'll also describe some of the issues that can occur while working with floating point and how to avoid them.

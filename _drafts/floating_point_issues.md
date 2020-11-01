@@ -42,11 +42,51 @@ But if you perform any calculations, there's probably a good chance that exact c
 False
 ```
 
-    
+To compare a calculated value against a known value, it's better to calculate the error. The most straightforward method is to calculate the absolute error. If the absolute error is small, then you can effectively treat the numbers as equal.
 
-## Don't forget about NaN and infinity
+$$ \begin{equation}
+Absolute Error = |Value - Expected|
+\end{equation} $$
 
-### Addition and subtraction
+Absolute error isn't great as a general purpose method for comparing floating point numbers though. Increasing the exponent of a floating point number also increases the size of the smallest value that can be represented and hence increases the absolute error.
+
+| Exponent | Smallest value         |
+| -------- | ---------------------- |
+| -126     | 1.401298464324817e-45  |
+| -20      | 1.1368683772161603e-13 |
+| 0        | 1.1920928955078125e-07 |
+| 20       | 0.125                  |
+| 127      | 2.028240960365167e31   |
+
+In this case, it's better to use the relative error because it calculates the error in proportion to the size of the expected value. This accounts for the bigger absolute error between values as the exponent grows and makes for more stable comparisons.
+
+$$ \begin{equation}
+Relative Error = |\frac{Value - Expected}{Expected}|
+\end{equation} $$
+
+Python 3 includes the function [`math.isclose()`](https://docs.python.org/3/library/math.html#math.isclose) which is a useful tool if you want to compare floating point values as it takes both relative and absolute values into account.
+
+## NaN
+
+Floating point uses NaN to represent the result of computations that have no representable value. For example, the following C++ code will set `result` to NaN:
+```
+float result = 0.0f / 0.0f;
+```
+
+Once a value has been set to NaN, any future operations on that value will also result in NaN. The value has been lost and instead has effectively become an error code. Be sure to validate the operations that you're performing to check that you're not generating NaNs accidentally.
+
+Also be careful to filter out NaN values when sorting floating point numbers. For example, Java's [`Double.compareTo()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Double.html) considers NaN greater than positive infinity, which will result in all NaNs being first in a list of sorted doubles!
+
+## Infinity
+
+Infinity is generated when a floating point value exceeds the range of valid values for that type. There are both positive and negative infinity values. The following C++ code will generate a positive infinity value:
+```
+float result = 3e38f * 10;
+```
+
+Like NaN, infinity is a special value that affects all subsequent computations. Once you have an infinity value, subsequent operations on that value will also generate infinity. One easy workaround when encountering infinity values is to switch to a larger type like `double` instead of `float`.
+
+## Addition and subtraction
 
 Addition or subtraction of two floating point numbers $$A$$ and $$B$$ requires the radix points of the two values to be aligned. This is already the case if the two numbers have the same exponent, but if not, the value with the smaller exponent needs the mantissa to be shifted to the right by $$E_{larger} - E_{smaller}$$ bits. Note that this this operation results in the smaller value becoming denormalised.
 
@@ -109,3 +149,12 @@ The difference in exponents between the two values has resulted in $$B$$ becomin
 Another issue exists when subtracting two floating point values that are almost equal. This will produce a very small result after subtraction and zeros will need to be shifted in from the right to normalise the number. Any representation error in the number that existed before subtraction will be greatly increased by this process.
 
 In summary, be careful when using addition and subtraction with numbers that differ significantly in magnitude, or subtraction of two large numbers where you depend on the accuracy of a small result.
+
+## Summary
+
+In summary, here are some things to bear in mind when you're working with floating point:
+
+* Floating point is an approximation and many decimal values cannot be represented exactly. Don't use floating point if an exact representation is required!
+* Make sure to use absolute and relative comparisons (such as Python's [`math.isclose()`](https://docs.python.org/3/library/math.html#math.isclose)) instead of exact comparisons when you need to compare floating point values.
+* Beware of NaN and Infinity values when performing calculations.
+* Avoid addition or subtraction of values that differ significantly in magnitude as this can give unexpected behaviour or large errors.
