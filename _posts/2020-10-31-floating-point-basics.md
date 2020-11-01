@@ -173,5 +173,6 @@ The mantissa is stored as a `1.23` fixed point number, but because we're storing
 
 * Wikipedia's entry for [floating point](https://en.wikipedia.org/wiki/Floating-point_arithmetic) contains a lot of useful information and is worth a read.
 * Intel published a fascinating article [Intel and Floating-Point](https://www.intel.com/content/dam/www/public/us/en/documents/case-studies/floating-point-case-study.pdf) which provides a history of the development of the IEEE Standard 754 for Binary Floating-point Arithmetic and the motivation behind it.
+* Bruce Dawson's blog contains lots of [interesting posts about floating point](https://randomascii.wordpress.com/category/floating-point/).
 
-In my next post, I'll also describe some of the issues that can occur while working with floating point and how to avoid them.
+In my [next post]({% post_url 2020-11-01-floating-point-issues %}), I'll also describe some of the issues that can occur while working with floating point and how to avoid them.

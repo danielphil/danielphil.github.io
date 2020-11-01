@@ -3,7 +3,7 @@ title:  "Issues with floating point"
 categories: Coding FloatingPoint
 ---
 
-Floating point values normally just work, but there are a few issues with them that are useful to be aware of! My previous post discussed the representation of values, but this one will talk more about the times where things might not work quite as expected. I'm aiming for this to be a practical guide with some simple rules to follow, rather than an exhaustive study into all the issues with floating point.
+Floating point values normally just work, but there are a few issues with them that are useful to be aware of! My [previous post]({% post_url 2020-10-31-floating-point-basics %}) discussed the representation of values, but this one will talk more about the times where things might not work quite as expected. I'm aiming for this to be a practical guide with some simple rules to follow, rather than an exhaustive study into all the issues with floating point.
 
 Perhaps the most important thing to note about floating point is that relies on approximations to work with real numbers. If you don't require 100% accuracy, then floating point will generally be fine, but it's not the right thing to use if you require complete accuracy.
 
