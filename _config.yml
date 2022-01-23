@@ -103,7 +103,7 @@ defaults:
 # Site Author
 author:
   name: Daniel Phillips
-  picture: /images/me.jpeg
+  #picture: /images/pic.jpeg
   email:
   twitter: danielp
   links:
