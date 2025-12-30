@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-remote_theme: danielphil/so-simple-theme@master
+remote_theme: danielphil/so-simple-theme@patched
 locale: en-GB
 title: "Random stuff"
 description: ""
@@ -38,6 +38,20 @@ disqus:
   shortname: danielphil
 twitter:
   username: "danielp" # site's Twitter username, e.g. "mmistakes"
+giscus: # parameters for Giscus comments. Obtain values from https://giscus.app/
+  repo: danielphil/blog-comments
+  repo_id: R_kgDOQxUHmQ
+  category: Announcements
+  category_id: DIC_kwDOQxUHmc4C0Z4A
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: light
+  lang: en
+  loading: lazy
+  crossorigin: anonymous
 
 # Liquid
 liquid:
