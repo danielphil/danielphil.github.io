@@ -39,7 +39,7 @@ disqus:
 twitter:
   username: "danielp" # site's Twitter username, e.g. "mmistakes"
 giscus: # parameters for Giscus comments. Obtain values from https://giscus.app/
-#  repo: danielphil/blog-comments
+  repo: danielphil/blog-comments
   repo_id: R_kgDOQxUHmQ
   category: Announcements
   category_id: DIC_kwDOQxUHmc4C0Z4A
